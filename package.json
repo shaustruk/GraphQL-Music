@@ -1,0 +1,24 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "graphql-music-service",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaustruk/GraphQL-Music.git"
+  },
+  "author": "ShaustrukE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaustruk/GraphQL-Music/issues"
+  },
+  "homepage": "https://github.com/shaustruk/GraphQL-Music#readme",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "eslint": "^8.18.0",
+    "typescript": "^4.7.4"
+  }
+}
