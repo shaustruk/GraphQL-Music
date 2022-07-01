@@ -2,8 +2,11 @@
   "name": "my-app",
   "version": "1.0.0",
   "description": "graphql-music-service",
-  "main": "index.ts",
+  "main": "start.ts",
   "scripts": {
+    "start:dev": "nodemon ./src/start.ts",
+    "start:prod": "tsc && node ./dist/index.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +23,9 @@
     "@tsconfig/node16": "^1.0.3",
     "eslint": "^8.18.0",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
   }
 }

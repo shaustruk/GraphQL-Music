@@ -1,0 +1,5 @@
+const resolversUser = {
+  Query: {
+    getUser: () => {},
+  },
+}
