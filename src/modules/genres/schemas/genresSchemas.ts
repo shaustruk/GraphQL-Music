@@ -11,10 +11,18 @@ const typeGenres = gql`
 
   type Genres {
     items: [Genre]
+    offset: Int
+    limit: Int
+    total: Int
   }
 
   type Query {
-    genres: Genres
+    getGenres(
+      name: String
+      description: String
+      country: String
+      year: Int
+    ): Genres
     genre(id: ID): Genre
   }
 `;

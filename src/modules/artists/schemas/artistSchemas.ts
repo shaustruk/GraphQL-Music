@@ -2,7 +2,7 @@ import { gql } from 'apollo-server';
 
 const typeArtists = gql`
   type Artist {
-    id: ID!
+    _id: ID!
     firstName: String
     secondName: String
     middleName: String

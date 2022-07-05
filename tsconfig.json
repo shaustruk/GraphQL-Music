@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
+    "target": "ES6",
+    "module": "Node16",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
     "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "target": "es5",
-    "outDir": "dist",
+    "skipLibCheck": true,
+    "experimentalDecorators": true
   },
-  "moduleResolution":"allowJS"
-
+  "include": ["src/*/"],
+  "exclude": [
+    "node_modules"
+  ]
 }
