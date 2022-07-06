@@ -2,21 +2,30 @@ import { gql } from 'apollo-server';
 import 'dotenv/config';
 
 export const typeUsers = gql`
-  type JWT {
-    jwt: String!
-  }
-
   type User {
-    _id: String!
-    firstName: String!
+    id: ID!
+    firstName: String
     lastName: String
     password: String!
     email: String!
   }
 
   type Query {
-    jwt(email: String, password: String): JWT
-    userID(id: ID): User
+    id(id: ID!): User
+  }
+
+  type JWT {
+    jwt: String
+  }
+
+  type responseUser {
+    user(
+      firstName: String
+      lastName: String
+      password: String
+      email: String
+      id: ID!
+    ): String
   }
 
   type Mutation {
@@ -26,5 +35,6 @@ export const typeUsers = gql`
       password: String
       email: String
     ): User!
+    jwt(password: String!, email: String!): JWT
   }
 `;

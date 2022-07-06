@@ -1,18 +1,35 @@
-import { IMutationRegister } from '../../../interfaces';
+import { IID, ILogin, IUser, IUserRes } from '../../../interfaces';
 
 export const usersResolvers = {
   Mutation: {
     createUser: async (
-      _: undefined,
-      { firstName, lastName, password, email }: IMutationRegister,
+      parent: IUser,
+      { firstName, lastName, password, email }: IUserRes,
       { dataSources }: any
     ) => {
-      return await dataSources.userAPI.userRegister(
+      const res = await dataSources.userAPI.userRegister(
         firstName,
         lastName,
         password,
         email
       );
+      return res;
+    },
+
+    jwt: async (
+      _: undefined,
+      { password, email }: ILogin,
+      { dataSources }: any
+    ) => {
+      return await dataSources.userAPI.getToken(password, email);
+    },
+  },
+  User: {
+    id: (parent: IUser) => parent._id, //
+  },
+  Query: {
+    id: async (_: undefined, { id }: IUser, { dataSources }: any) => {
+      return await dataSources.userAPI.getUserID(id);
     },
   },
 };

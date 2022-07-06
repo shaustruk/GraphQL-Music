@@ -3,7 +3,7 @@ export interface ILogin {
   password: string;
 }
 
-export interface IId {
+export interface IID {
   id: string;
 }
 
@@ -16,12 +16,20 @@ export interface IDataSource {
   name: string;
 }
 
-export interface IMutationRegister {
+export interface IUser {
   firstName: string;
   lastName: string;
   password: string;
   email: string;
   _id: string;
+  id?: string;
+}
+
+export interface IUserRes {
+  firstName: string;
+  lastName: string;
+  password: string;
+  email: string;
 }
 
 export interface IGetGenres {
