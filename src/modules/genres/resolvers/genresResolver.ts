@@ -1,11 +1,21 @@
-import { IGetGenres } from '../../../interfaces';
+import { IGenre, IGetGenres } from '../models/intarfaces';
 
 export const genresResolver = {
   Query: {
-    getGenres: (
-      _: undefined,
+    genres: (_: undefined, __: undefined, { dataSources }: any) =>
+      dataSources.genresAPI.getGenres(),
+
+    genre: (_: undefined, { id }: IGenre, { dataSources }: any) =>
+      dataSources.genresAPI.getGenre(id as string),
+  },
+  Mutation: {
+    addGenre: (
+      parent: IGenre,
       { name, description, country, year }: IGetGenres,
       { dataSources }: any
-    ) => dataSources.genresAPI.getGenres(name, description, country, year),
+    ) => dataSources.genresAPI.createGenre(name, description, country, year),
+  },
+  Genre: {
+    id: (parent: IGenre) => parent._id, //
   },
 };

@@ -17,7 +17,27 @@ const typeTracks = gql`
 
   type Query {
     tracks: Tracks
-    track(id: ID): Track
+    track(id: ID!): Track
+  }
+
+  input CreateTrackInput {
+    title: String!
+    albums: [ID]
+    bands: [ID]
+    duration: Int
+    released: Int
+    genres: [ID]
+  }
+
+  type Mutation {
+    createTrack(
+      title: String!
+      albums: [ID]
+      bands: [ID]
+      duration: Int
+      released: Int
+      genres: [ID]
+    ): Track!
   }
 `;
 export { typeTracks };

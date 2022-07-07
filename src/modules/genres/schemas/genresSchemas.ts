@@ -2,7 +2,7 @@ import { gql } from 'apollo-server';
 
 const typeGenres = gql`
   type Genre {
-    _id: ID!
+    id: ID!
     name: String
     description: String
     country: String
@@ -17,13 +17,17 @@ const typeGenres = gql`
   }
 
   type Query {
-    getGenres(
+    genres: Genres
+    genre(id: ID): Genre
+  }
+
+  type Mutation {
+    addGenre(
       name: String
       description: String
       country: String
       year: Int
-    ): Genres
-    genre(id: ID): Genre
+    ): Genre!
   }
 `;
 export { typeGenres };

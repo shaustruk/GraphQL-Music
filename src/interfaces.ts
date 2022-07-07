@@ -31,10 +31,3 @@ export interface IUserRes {
   password: string;
   email: string;
 }
-
-export interface IGetGenres {
-  name: string;
-  description: string;
-  country: string;
-  year: number;
-}

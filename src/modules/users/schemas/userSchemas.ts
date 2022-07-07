@@ -18,16 +18,6 @@ export const typeUsers = gql`
     jwt: String
   }
 
-  type responseUser {
-    user(
-      firstName: String
-      lastName: String
-      password: String
-      email: String
-      id: ID!
-    ): String
-  }
-
   type Mutation {
     createUser(
       firstName: String
