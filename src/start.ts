@@ -9,10 +9,11 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => dataSources,
-  context: () => {
-    return {
-      token: 'foo',
-    };
+  context: ({ req }) => {
+    // Получаем токен из заголовка
+    const token = req.headers.authorization || '';
+    // Пытаемся получить юзера по токену
+    return { token };
   },
 });
 

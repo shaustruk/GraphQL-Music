@@ -5,9 +5,14 @@ export interface IGetGenres {
   year: number;
 }
 
+export interface IPutGenres {
+  id: number;
+  body: IGetGenres;
+}
+
 export interface IGenre {
   _id: string;
-  id?:string
+  id?: string;
   name: string;
   description: string;
   country: string;
@@ -19,4 +24,9 @@ export interface IGenres {
   limit: number;
   offset: number;
   total: number;
+}
+
+export interface IDelete {
+  acknowledged: boolean;
+  deletedCount: number;
 }

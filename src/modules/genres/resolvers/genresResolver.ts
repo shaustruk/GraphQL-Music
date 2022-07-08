@@ -1,4 +1,5 @@
-import { IGenre, IGetGenres } from '../models/intarfaces';
+import dataSources from '../../dataSources';
+import { IGenre, IGetGenres, IPutGenres } from '../models/intarfaces';
 
 export const genresResolver = {
   Query: {
@@ -14,7 +15,17 @@ export const genresResolver = {
       { name, description, country, year }: IGetGenres,
       { dataSources }: any
     ) => dataSources.genresAPI.createGenre(name, description, country, year),
+
+    updaitGenre: (
+      parent: undefined,
+      { id, body }: IPutGenres,
+      { dataSources }: any
+    ) => dataSources.genresAPI.putGenre(id, body),
+
+    deleteGenre: (parent: undefined, { id }: IGenre, { dataSources }: any) =>
+      dataSources.genresAPI.delGenre(id as string),
   },
+
   Genre: {
     id: (parent: IGenre) => parent._id, //
   },

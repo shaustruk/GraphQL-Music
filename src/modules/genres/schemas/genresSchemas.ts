@@ -21,6 +21,18 @@ const typeGenres = gql`
     genre(id: ID): Genre
   }
 
+  type DEL {
+    acknowledged: Boolean
+    deletedCount: Int
+  }
+
+  input UpdateGenreInput {
+    name: String
+    description: String
+    country: String
+    year: Int
+  }
+
   type Mutation {
     addGenre(
       name: String
@@ -28,6 +40,10 @@ const typeGenres = gql`
       country: String
       year: Int
     ): Genre!
+
+    updaitGenre(id: ID!, body: UpdateGenreInput): Genre!
+
+    deleteGenre(id: ID!): DEL
   }
 `;
 export { typeGenres };
