@@ -3,6 +3,7 @@ import { usersResolvers } from './users/resolvers/userresolver';
 import { trackResolver } from './tracks/resolvers/trackResolvers';
 import { artistsResolver } from './artists/resolvers/artistResolveer';
 import { bandsResolver } from './bands/resolvers/bandsResolver';
+import { albumsResolver } from './albums/resolver/albumsResolver';
 
 const resolvers = [
   genresResolver,
@@ -10,6 +11,7 @@ const resolvers = [
   trackResolver,
   artistsResolver,
   bandsResolver,
+  albumsResolver,
 ];
 
 export default resolvers;

@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-const typeAlboms = gql`
+const typeAlbums = gql`
   type Album {
     id: ID!
     name: String!
@@ -17,8 +17,8 @@ const typeAlboms = gql`
   }
 
   type Query {
-    alboms: Albums
-    albom(_id: ID): Album
+    albums: Albums
+    album(id: ID): Album
   }
 `;
-export { typeAlboms };
+export { typeAlbums };
