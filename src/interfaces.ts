@@ -31,3 +31,9 @@ export interface IUserRes {
   password: string;
   email: string;
 }
+
+export interface Member {
+  artistId: string;
+  instrument: string;
+  years: string[];
+}

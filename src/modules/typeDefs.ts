@@ -4,6 +4,7 @@ import { typeUsers } from './users/schemas/userSchemas';
 import { typeBands } from './bands/schemas/bandsSchemas';
 import { typeAlboms } from './albums/schemas/albomSchemas';
 import { typeArtists } from './artists/schemas/artistSchemas';
+import { typeMembers } from './member/memberSchemas';
 
 const typeDefs = [
   typeUsers,
@@ -12,6 +13,7 @@ const typeDefs = [
   typeBands,
   typeAlboms,
   typeArtists,
+  typeMembers,
 ];
 
 export default typeDefs;

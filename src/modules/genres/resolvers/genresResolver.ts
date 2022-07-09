@@ -1,4 +1,3 @@
-import dataSources from '../../dataSources';
 import { IGenre, IGetGenres, IPutGenres } from '../models/intarfaces';
 
 export const genresResolver = {

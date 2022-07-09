@@ -1,3 +1,4 @@
+import dataSources from '../../dataSources';
 import { ITrack, ITrackRes } from '../models/interface';
 
 export const trackResolver = {
@@ -18,7 +19,13 @@ export const trackResolver = {
     },
   },
   Query: {
-    tracks: (_: undefined, {}, { dataSources }: any) =>
-      dataSources.genresAPI.getTracks(),
+    tracks: (_: undefined, __: undefined, { dataSources }: any) =>
+      dataSources.tracksAPI.getTracks(),
+
+    track: (_: undefined, { id }: ITrack, { dataSources }: any) =>
+      dataSources.tracksAPI.getTrack(id),
+  },
+  Track: {
+    id: (parent: ITrack) => parent._id, //
   },
 };

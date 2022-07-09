@@ -9,6 +9,10 @@ export interface ITrack {
   genresIds: string[];
 }
 
+export interface ITracks {
+  tracks: [ITrack];
+}
+
 export interface ITrackRes {
   title: string;
   albums: string[];

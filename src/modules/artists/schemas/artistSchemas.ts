@@ -2,7 +2,7 @@ import { gql } from 'apollo-server';
 
 const typeArtists = gql`
   type Artist {
-    _id: ID!
+    id: ID!
     firstName: String
     secondName: String
     middleName: String
@@ -10,16 +10,24 @@ const typeArtists = gql`
     birthPlace: String
     country: String
     bands: [Band]
-    instruments: String
+    instruments: [String]
   }
 
   type Artists {
-    items: Artist
+    items: [Artist]
+    offset: Int
+    limit: Int
+    total: Int
   }
 
   type Query {
     artists: Artists
     artist(id: ID): Artist
+  }
+
+  type DEL {
+    acknowledged: Boolean
+    deletedCount: Int
   }
 `;
 export { typeArtists };

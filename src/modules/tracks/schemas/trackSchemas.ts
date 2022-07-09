@@ -2,7 +2,7 @@ import { gql } from 'apollo-server';
 
 const typeTracks = gql`
   type Track {
-    _id: ID!
+    id: ID!
     title: String!
     albums: [Album]
     bands: [Band]
@@ -13,6 +13,9 @@ const typeTracks = gql`
 
   type Tracks {
     items: [Track]
+    offset: Int
+    limit: Int
+    total: Int
   }
 
   type Query {

@@ -12,6 +12,7 @@ export const typeUsers = gql`
 
   type Query {
     id(id: ID!): User
+    jwt(password: String!, email: String!): JWT
   }
 
   type JWT {
@@ -25,6 +26,5 @@ export const typeUsers = gql`
       password: String
       email: String
     ): User!
-    jwt(password: String!, email: String!): JWT
   }
 `;

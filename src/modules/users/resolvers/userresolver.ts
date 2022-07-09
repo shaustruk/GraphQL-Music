@@ -15,14 +15,6 @@ export const usersResolvers = {
       );
       return res;
     },
-
-    jwt: async (
-      _: undefined,
-      { password, email }: ILogin,
-      { dataSources }: any
-    ) => {
-      return await dataSources.userAPI.getToken(password, email);
-    },
   },
   User: {
     id: (parent: IUser) => parent._id, //
@@ -30,6 +22,13 @@ export const usersResolvers = {
   Query: {
     id: async (_: undefined, { id }: IUser, { dataSources }: any) => {
       return await dataSources.userAPI.getUserID(id);
+    },
+    jwt: async (
+      _: undefined,
+      { password, email }: ILogin,
+      { dataSources }: any
+    ) => {
+      return await dataSources.userAPI.getToken(password, email);
     },
   },
 };

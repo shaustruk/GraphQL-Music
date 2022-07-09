@@ -2,7 +2,7 @@ import { gql } from 'apollo-server';
 
 const typeBands = gql`
   type Band {
-    _id: ID!
+    id: ID!
     name: String
     origin: String
     members: [Member]
@@ -12,12 +12,9 @@ const typeBands = gql`
 
   type Bands {
     items: [Band]
-  }
-
-  type Member {
-    artist: String
-    instrument: String
-    years: String
+    offset: Int
+    limit: Int
+    total: Int
   }
 
   type Query {
