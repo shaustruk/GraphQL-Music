@@ -14,6 +14,9 @@ const typeAlbums = gql`
 
   type Albums {
     items: [Album]
+    offset: Int
+    limit: Int
+    total: Int
   }
 
   type Query {
